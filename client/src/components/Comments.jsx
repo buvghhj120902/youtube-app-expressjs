@@ -51,9 +51,13 @@ const Comments = ({videoId}) => {
     <Container>
 
       <NewComment>
+
         <Avatar src={currentUser.img} />
+
         <Input placeholder="Viết bình luận..." />
+
       </NewComment>
+
       {comments.map(comment => (
 
          <Comment comment={comment} key={comment._id} />
@@ -62,6 +66,7 @@ const Comments = ({videoId}) => {
      
 
     </Container>
+    
   );
 };
 

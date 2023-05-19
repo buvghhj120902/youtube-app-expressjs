@@ -70,9 +70,11 @@ const Label = styled.label`
 const Upload = ({setOpen}) => {
 
     const [img, setImg] = useState(undefined)
+
     const [video, setVideo] = useState(undefined)
 
     const [imgPerc, setImgPerc] = useState(0)
+
     const [videoPerc, setVideoPerc] = useState(0)
 
     const [inputs, setInputs] = useState({})
@@ -112,7 +114,7 @@ const Upload = ({setOpen}) => {
 
             (snapshot) => {
   
-              const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
               urlType === "imgUrl" ? setImgPerc(Math.round(progress)) : setVideoPerc(Math.round(progress))
               
               switch (snapshot.state){
@@ -128,8 +130,8 @@ const Upload = ({setOpen}) => {
 
               }
 
-            },(error) => {}, 
-            () => {
+            },(error) => {},  () => {
+
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
 
                     setInputs((prev) => {
@@ -139,6 +141,7 @@ const Upload = ({setOpen}) => {
                     })
 
                 })
+
               }
 
         )
@@ -146,7 +149,7 @@ const Upload = ({setOpen}) => {
 
     useEffect(() => {
 
-      video && uploadFile(video, "videoUrl")
+        video && uploadFile(video, "videoUrl")
 
     },[video])
 
@@ -158,17 +161,18 @@ const Upload = ({setOpen}) => {
 
     const handleUpload = async (e) => {
 
-     e.preventDefault()
+        e.preventDefault()
 
-     const res = await axios.post("/videos", {...inputs, tags})
+        const res = await axios.post("/videos", {...inputs, tags})
 
-     setOpen(false)
+        setOpen(false)
 
-     res.status === 200 && navigate(`/video/${res.data._id}`)
+        res.status === 200 && navigate(`/video/${res.data._id}`)
 
     }
 
   return (
+
     <Container>
 
         <Wrapper>
@@ -180,10 +184,12 @@ const Upload = ({setOpen}) => {
             <Label>Video</Label>
 
             {videoPerc > 0 
+
             ? 
             ("Uploading:" + videoPerc + "%") 
             : 
             (<Input type="file" accept="video/*" onChange={(e)=> setVideo(e.target.files[0])} />)
+
             }
 
             <Input type="text" placeholder='Tiêu đề' name="title" onChange={handleChange} />
@@ -195,16 +201,20 @@ const Upload = ({setOpen}) => {
             <Label>Hình ảnh</Label>
 
             {imgPerc > 0 
+
             ? 
             ("Uploading:" + imgPerc + "%") 
             : 
-            (<Input type="file" accept="image/*"  onChange={(e)=> setImg(e.target.files[0])} />)}
+            (<Input type="file" accept="image/*"  onChange={(e)=> setImg(e.target.files[0])} />)
+            
+            }
 
             <Button onClick={handleUpload}>Tải lên</Button>
 
         </Wrapper>
 
     </Container>
+    
   )
 }
 

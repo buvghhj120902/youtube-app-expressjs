@@ -11,10 +11,10 @@ import commentsRoutes from './routes/comments.js'
 
 const app = express()
 dotenv.config()
+
 const port = process.env.PORT || 9000
 
 // Connect to MongoDB
-
 const connect = async () => {
 
     try {
@@ -35,7 +35,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(cors())
 
-
+//Routes
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/videos", videoRoutes)

@@ -18,7 +18,7 @@ export const updateUser = async (req, res, next) => {
                 },
                 {
                     new: true
-                }
+                },
 
             )
 
@@ -96,8 +96,8 @@ export const subscribe = async (req, res, next) => {
             {
                 $addToSet: {
                     subscribedUsers: req.params.id
-                }
-            }
+                },
+            },
         )
 
         await User.findByIdAndUpdate(
@@ -106,8 +106,8 @@ export const subscribe = async (req, res, next) => {
             {
                 $inc: {
                     subscribers: 1
-                }
-            }
+                },
+            },
 
         )
 
@@ -131,8 +131,8 @@ export const unSubscribe = async (req, res, next) => {
             {
                 $pull: {
                     subscribedUsers: req.params.id
-                }
-            }
+                },
+            },
 
         )
 
@@ -142,8 +142,8 @@ export const unSubscribe = async (req, res, next) => {
             {
                 $inc: {
                     subscribers: -1
-                }
-            }
+                },
+            },
 
         )
 

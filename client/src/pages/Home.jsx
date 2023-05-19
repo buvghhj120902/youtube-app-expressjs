@@ -29,7 +29,9 @@ const Home = ({type}) => {
 
 
   return (
+
     <Container>
+      
       {videos.map(video => (
 
          <Card key={video._id} video={video} />
@@ -37,6 +39,7 @@ const Home = ({type}) => {
       ))}
      
     </Container>
+
   );
 };
 

@@ -121,6 +121,7 @@ const VideoFrame = styled.video`
 const Video = () => {
 
   const {currentUser} = useSelector(state => state.user)
+
   const {currentVideo} = useSelector(state => state.video)
 
   const dispatch = useDispatch()
@@ -145,7 +146,7 @@ const Video = () => {
         
       } catch (err) {
 
-
+        console.log(err)
         
       }
 
@@ -249,9 +250,13 @@ const Video = () => {
           <Button onClick={handleSub} >
 
             {currentUser && currentUser.subscribedUsers?.includes(channel._id) 
+
             ? 
             (<Subscribe style={{ backgroundColor:"#a1a1aa" }}>Đã đăng ký</Subscribe>) 
-            : <Subscribe style={{ backgroundColor:"red" }}>Đăng ký</Subscribe>
+
+            : 
+            (<Subscribe style={{ backgroundColor:"red" }}>Đăng ký</Subscribe>)
+
             }
 
             </Button>
@@ -263,6 +268,7 @@ const Video = () => {
         <Comments videoId={currentVideo?._id} />
 
       </Content>
+      
      <Recommendation tags={currentVideo?.tags}/>
 
     </Container>

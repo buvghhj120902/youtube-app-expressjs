@@ -25,14 +25,18 @@ const Recommendation = ({ tags }) => {
 
     }, [tags])
 
-    console.log(videos);
-
     return (
+
         <Container>
+
             {videos.map(video => (
+
                 <Card type="sm" key={video._id} video={video} />
+
             ))}
+
         </Container>
+
     )
 }
 

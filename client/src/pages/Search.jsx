@@ -31,11 +31,17 @@ const Search = () => {
     }, [query])
 
   return (
+
     <Container>
+
         {videos.map(video => (
+
             <Card key={video._id} video={video} />
+
         ))}
+        
     </Container>
+
   )
 }
 

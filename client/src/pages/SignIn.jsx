@@ -72,7 +72,9 @@ const Link = styled.span`
 const SignIn = () => {
 
   const [name, setName] = useState("")
+
   const [email, setEmail] = useState("")
+
   const [password, setPassword] = useState("")
 
   const navigate = useNavigate()
@@ -87,15 +89,15 @@ const SignIn = () => {
 
      try {
 
-      const res  = await axios.post("auth/login", {name, password}) 
+        const res  = await axios.post("auth/login", {name, password}) 
 
-      dispath(loginSuccess(res.data))
+        dispath(loginSuccess(res.data))
 
-      navigate("/")
+        navigate("/")
       
      } catch (err) {
 
-      dispath(loginFailure())
+        dispath(loginFailure())
       
      }
 
@@ -131,19 +133,33 @@ const SignIn = () => {
 
   return (
     <Container>
+
       <Wrapper>
+
         <Title>Đăng nhập</Title>
+
         <Input placeholder="username" onChange={(e) => setName(e.target.value)}/>
+
         <Input type="password" placeholder="password"  onChange={(e) => setPassword(e.target.value)}/>
+
         <Button onClick={handleLogin}>Đăng nhập</Button>
+
         <Title>or</Title>
+
         <Button onClick={loginWithGoogle}>Đăng nhập bằng Google</Button>
+
         <Title>or</Title>
+
         <Input placeholder="username" onChange={(e) => setName(e.target.value)} />
+
         <Input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+
         <Input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+
         <Button>Đăng ký</Button>
+
       </Wrapper>
+
       <More>
         English(USA)
         <Links>
@@ -152,6 +168,7 @@ const SignIn = () => {
           <Link>Terms</Link>
         </Links>
       </More>
+      
     </Container>
   );
 };

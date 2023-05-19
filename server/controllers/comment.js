@@ -50,7 +50,7 @@ export const deleteComment = async (req, res, next) => {
 
     } catch (err) {
 
-
+        next(err)
 
     }
 
@@ -64,11 +64,12 @@ export const getComments = async (req, res, next) => {
 
             {
                 videoId: req.params.videoId
-            }
+            },
 
         )
 
         res.status(200).json(comments)
+
     } catch (err) {
 
         next(err)

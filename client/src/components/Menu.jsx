@@ -88,103 +88,145 @@ const Menu = ({ darkMode, setDarkMode }) => {
 
   return (
     <Container>
+
       <Wrapper>
+
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <Logo>
-            <Img src={LamaTube} />
-            YOUTOBE
-          </Logo>
+
+            <Logo>
+              <Img src={LamaTube} />
+              YOUTOBE
+            </Logo>
+
         </Link>
+
         <Link to="/" style={{textDecoration:"none", color:"white"}}>
-        <Item>
-          <HomeIcon />
-          Home
-        </Item>
+
+            <Item>
+              <HomeIcon />
+              Home
+            </Item>
+
         </Link>
+
         <Link to="trends" style={{textDecoration:"none", color:"white"}}>
-        <Item>
-          <ExploreOutlinedIcon />
-          Xu hướng
-        </Item>
+
+            <Item>
+              <ExploreOutlinedIcon />
+              Xu hướng
+            </Item>
+
         </Link>
 
         <Link to="subscriptions" style={{textDecoration:"none", color:"white"}}>
-        <Item>
-          <SubscriptionsOutlinedIcon />
-          Kênh đăng ký
-        </Item>
+
+            <Item>
+              <SubscriptionsOutlinedIcon />
+              Kênh đăng ký
+            </Item>
+
         </Link>
+
         <Hr />
-        <Item>
-          <VideoLibraryOutlinedIcon />
-          Library
-        </Item>
-        <Item>
-          <HistoryOutlinedIcon />
-          History
-        </Item>
+
+            <Item>
+              <VideoLibraryOutlinedIcon />
+              Library
+            </Item>
+            
+            <Item>
+              <HistoryOutlinedIcon />
+              History
+            </Item>
+
         <Hr />
 
         {!currentUser && 
-          <><Login>
+          <>
+
+          <Login>
+
             Đăng nhập để có thể like, bình luận và đăng ký kênh
+            
             <Link to="signin" style={{textDecoration:"none"}}>
+
               <Button>
                 <AccountCircleOutlinedIcon />
-               Đăng nhập
+                Đăng nhập
               </Button>
+
             </Link>
+
           </Login>
+
           <Hr/>
+
           </>
           
         }
 
         
         <Title>BEST OF YOUTOBE</Title>
-        <Item>
-          <LibraryMusicOutlinedIcon />
-          Music
-        </Item>
-        <Item>
-          <SportsBasketballOutlinedIcon />
-          Sports
-        </Item>
-        <Item>
-          <SportsEsportsOutlinedIcon />
-          Gaming
-        </Item>
-        <Item>
-          <MovieOutlinedIcon />
-          Movies
-        </Item>
-        <Item>
-          <ArticleOutlinedIcon />
-          News
-        </Item>
-        <Item>
-          <LiveTvOutlinedIcon />
-          Live
-        </Item>
-        <Hr />
-        <Item>
-          <SettingsOutlinedIcon />
-          Settings
-        </Item>
-        <Item>
-          <FlagOutlinedIcon />
-          Report
-        </Item>
-        <Item>
-          <HelpOutlineOutlinedIcon />
-          Help
-        </Item>
-        <Item onClick={() => setDarkMode(!darkMode)}>
-          <SettingsBrightnessOutlinedIcon />
-          {darkMode ? "Light" : "Dark"} Mode
-        </Item>
+
+              <Item>
+                <LibraryMusicOutlinedIcon />
+                Music
+              </Item>
+
+              <Item>
+                <SportsBasketballOutlinedIcon />
+                Sports
+              </Item>
+
+              <Item>
+                <SportsEsportsOutlinedIcon />
+                Gaming
+              </Item>
+
+              <Item>
+                <MovieOutlinedIcon />
+                Movies
+              </Item>
+
+              <Item>
+                <ArticleOutlinedIcon />
+                News
+              </Item>
+
+              <Item>
+                <LiveTvOutlinedIcon />
+                Live
+              </Item>
+
+              <Hr />
+
+              <Item>
+                <SettingsOutlinedIcon />
+                Settings
+              </Item>
+              
+              <Item>
+                <FlagOutlinedIcon />
+                Report
+              </Item>
+
+              <Item>
+                <HelpOutlineOutlinedIcon />
+                Help
+              </Item>
+
+              <Item onClick={() => setDarkMode(!darkMode)}>
+
+                <SettingsBrightnessOutlinedIcon />
+
+                {darkMode ? "Light" : "Dark"} Mode
+                
+              </Item>
+        
       </Wrapper>
+
     </Container>
+
   );
 };
 

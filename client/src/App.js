@@ -25,6 +25,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
+
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
 
       <Container>
@@ -72,6 +73,7 @@ function App() {
       </Container>
 
     </ThemeProvider>
+
   );
 }
 

@@ -4,8 +4,13 @@ import { addComment, deleteComment, getComments } from '../controllers/comment.j
 
 const router = express.Router()
 
+//Ađ comment
 router.post("/", verifyToken, addComment)
+
+//Delete comment
 router.delete("/:id", verifyToken, deleteComment)
+
+//Get comment
 router.get("/:videoId", getComments)
 
 export default router

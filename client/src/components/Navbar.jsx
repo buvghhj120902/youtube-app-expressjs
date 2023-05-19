@@ -89,11 +89,15 @@ const Navbar = () => {
       <Wrapper>
 
         <Search>
+
           <Input placeholder="Search" onChange={(e)=>setSearch(e.target.value)} />
+
           <SearchOutlinedIcon onClick={() => navigate(`/search?q=${search}`)} />
+
         </Search>
 
        {currentUser ? 
+
        (
          <User>
               <VideoCallOutlinedIcon onClick={() => setOpen(true)} />
@@ -104,12 +108,13 @@ const Navbar = () => {
        : 
        (
          <Link to="signin" style={{ textDecoration: "none" }}>
-         <Button>
-           <AccountCircleOutlinedIcon />
-           Đăng nhập
-         </Button>
-       </Link>
+              <Button>
+                <AccountCircleOutlinedIcon />
+                Đăng nhập
+              </Button>
+         </Link>
        )
+
        }
         
       </Wrapper>

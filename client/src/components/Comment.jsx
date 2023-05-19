@@ -56,16 +56,23 @@ const Comment = ({comment}) => {
   },[comment.userId])
   
   return (
+
     <Container>
+
       <Avatar src={channel.img} />
+
       <Details>
+
         <Name>
           {channel.name} <Date> {format(comment.createdAt)}</Date>
         </Name>
+        
         <Text>
          {comment.desc}
         </Text>
+
       </Details>
+
     </Container>
   );
 };
