@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 import { createError } from "../error.js";
 
+//Register
 export const register = async (req, res, next) => {
 
     try {
@@ -25,9 +26,9 @@ export const register = async (req, res, next) => {
 
     }
 
-
 }
 
+//Login
 export const login = async (req, res) => {
 
     try {
@@ -61,6 +62,7 @@ export const login = async (req, res) => {
 
 }
 
+//Login with Google account
 export const googleAuth = async (req, res, next) => {
 
     try {

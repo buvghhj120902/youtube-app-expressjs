@@ -2,6 +2,7 @@ import { createError } from "../error.js"
 import Comment from "../models/Comment.js"
 import Video from "../models/Video.js"
 
+//Add Comment
 export const addComment = async (req, res, next) => {
 
     try {
@@ -27,7 +28,7 @@ export const addComment = async (req, res, next) => {
 
 }
 
-
+//Delete Comment
 export const deleteComment = async (req, res, next) => {
 
     try {
@@ -56,7 +57,8 @@ export const deleteComment = async (req, res, next) => {
 
 }
 
-export const getComments = async (req, res, next) => {
+//Get all comments
+export const getComment = async (req, res, next) => {
 
     try {
 

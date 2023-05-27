@@ -2,6 +2,7 @@ import { createError } from "../error.js";
 import User from "../models/User.js";
 import Video from "../models/Video.js";
 
+//Update user
 export const updateUser = async (req, res, next) => {
 
     if (req.params.id === req.user.id) {
@@ -40,6 +41,7 @@ export const updateUser = async (req, res, next) => {
 
 }
 
+//Delete user
 export const deleteUser = async (req, res, next) => {
 
     if (req.params.id === req.user.id) {
@@ -66,6 +68,7 @@ export const deleteUser = async (req, res, next) => {
 
 }
 
+//Get user
 export const getUser = async (req, res, next) => {
 
     try {
@@ -86,6 +89,7 @@ export const getUser = async (req, res, next) => {
 
 }
 
+//Subscribe a user
 export const subscribe = async (req, res, next) => {
 
     try {
@@ -121,6 +125,7 @@ export const subscribe = async (req, res, next) => {
 
 }
 
+//Unsubscribe a user
 export const unSubscribe = async (req, res, next) => {
 
     try {
@@ -158,6 +163,7 @@ export const unSubscribe = async (req, res, next) => {
 
 }
 
+//Like a video
 export const like = async (req, res, next) => {
 
     try {
@@ -189,6 +195,7 @@ export const like = async (req, res, next) => {
     }
 }
 
+//Dislike a video
 export const disLike = async (req, res, next) => {
 
     try {

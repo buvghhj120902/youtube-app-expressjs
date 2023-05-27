@@ -120,12 +120,15 @@ const Upload = ({setOpen}) => {
               switch (snapshot.state){
 
                 case 'paused':
-                console.log('Upload is paused')
+                   console.log('Upload is paused')
                 break;
+
                 case 'running':
-                console.log('Upload is running')
+                   console.log('Upload is running')
                 break;
+
                 default:
+
                 break;
 
               }
@@ -186,8 +189,11 @@ const Upload = ({setOpen}) => {
             {videoPerc > 0 
 
             ? 
+
             ("Uploading:" + videoPerc + "%") 
+
             : 
+
             (<Input type="file" accept="video/*" onChange={(e)=> setVideo(e.target.files[0])} />)
 
             }
@@ -203,7 +209,9 @@ const Upload = ({setOpen}) => {
             {imgPerc > 0 
 
             ? 
+
             ("Uploading:" + imgPerc + "%") 
+            
             : 
             (<Input type="file" accept="image/*"  onChange={(e)=> setImg(e.target.files[0])} />)
             

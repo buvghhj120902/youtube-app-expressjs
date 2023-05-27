@@ -41,6 +41,7 @@ app.use("/api/users", userRoutes)
 app.use("/api/videos", videoRoutes)
 app.use("/api/comments", commentsRoutes)
 
+//Config error
 app.use((err, req, res, next) => {
 
     const status = err.status || 500
